@@ -1,0 +1,177 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Inter", "Segoe UI", sans-serif;
+
+    background:
+        radial-gradient(circle at top left, #8b5cf6 0%, transparent 35%),
+        radial-gradient(circle at bottom right, #06b6d4 0%, transparent 35%),
+        #0f172a;
+}
+
+/* Main Card */
+.container {
+    width: min(90%, 500px);
+    min-height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    padding: 40px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 24px;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 35px 80px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Heading */
+.container .heading {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+}
+
+/* Input + Button */
+.input-button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Input */
+.container .input {
+    width: 120px;
+    height: 46px;
+
+    padding: 0 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    transition: all 0.25s ease;
+}
+
+.container .input::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.container .input:focus {
+    border-color: #a78bfa;
+
+    box-shadow:
+        0 0 0 4px rgba(139, 92, 246, 0.15),
+        0 0 20px rgba(139, 92, 246, 0.2);
+
+    background: rgba(255, 255, 255, 0.14);
+}
+
+/* Button */
+.container .button {
+    height: 46px;
+    min-width: 100px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #8b5cf6,
+        #6366f1
+    );
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(99, 102, 241, 0.35);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+.container .button:hover {
+    filter: brightness(1.12);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 28px rgba(99, 102, 241, 0.5);
+}
+
+.container .button:active {
+    transform: scale(0.95);
+}
+
+.result{
+    font-weight: 600;
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+    .container {
+        min-height: 280px;
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+
+    .container .heading {
+        font-size: 24px;
+    }
+
+    .input-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .container .input {
+        width: 110px;
+    }
+
+    .container .button {
+        min-width: 90px;
+    }
+}
